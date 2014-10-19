@@ -3,6 +3,13 @@ require 'test_helper'
 class PostsControllerTest < ActionController::TestCase
   setup do
     @post = posts(:one)
+    @update = {
+	:title => 'PicLoad' ,
+	:description => 'PicLoad is a website from the buffercode team	' ,
+	:image_url => 'debug.jpg' ,
+
+}
+
   end
 
   test "should get index" do
@@ -18,7 +25,7 @@ class PostsControllerTest < ActionController::TestCase
 
   test "should create post" do
     assert_difference('Post.count') do
-      post :create, post: { description: @post.description, image_url: @post.image_url, title: @post.title }
+      post :create, post: { description: @post.description, image_url: @post.image_url, title: @post.title }, :post => @update
     end
 
     assert_redirected_to post_path(assigns(:post))
@@ -35,7 +42,7 @@ class PostsControllerTest < ActionController::TestCase
   end
 
   test "should update post" do
-    patch :update, id: @post, post: { description: @post.description, image_url: @post.image_url, title: @post.title }
+    patch :update, id: @post, post: { description: @post.description, image_url: @post.image_url, title: @post.title }, :post => @update
     assert_redirected_to post_path(assigns(:post))
   end
 

@@ -4,7 +4,7 @@ development:
   adapter: mysql
   database: picload_development
   username: root
-  password: [pass]
+  password: ['']
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -14,12 +14,12 @@ test:
   adapter: mysql
   database: picload_test
   username: root
-  password: [pass]
+  password: ['']
   host: localhost
 
 production:
   adapter: mysql
   database: picload_production
-  username: root
-  password: [pass]
+  username: admin
+  password: ['']
   host: localhost
