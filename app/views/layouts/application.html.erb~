@@ -27,10 +27,12 @@
            </td>
            <td class="header-right"> 
            
-            <form method="get" id="searchform" name="searchform" action="http://www.google.com/search" target="_blank">
-          <input type="text" name="as_q" id="s" value="Search this site..." onFocus="if (this.value == &#39;Search this site...&#39;) {this.value = &#39;&#39;;}" onBlur="if (this.value == &#39;&#39;) {this.value = &#39;Search this site...&#39;;}">
-                       <input class="submit btn" type="image" alt="Go">
-          </form>
+                <form class="form-search">
+    <div class="input-append">
+    <input type="text" class="span2 search-query">
+    <button type="submit" class="btn">Search</button>
+    </div>
+    </form>
           
            </td>
            </tr>
@@ -40,8 +42,8 @@
 
 <div class="nav-container">
 			<div class="nav">
-			<!--	<ul>
-					<li><a href="">Home</a></li>
+			<!--	<ul class="nav nav-tabs">
+					<li class="active"><a href="">Home</a></li>
 					<li><a href="">CSS</a></li>
 					<li><a href="">PHP</a></li>
 					<li><a href="">SEO</a></li>
@@ -54,11 +56,24 @@
 			</div>
 		</div>
 <div class="container">
+<p>
+<button class="btn btn-large btn-primary" type="button">Large button</button>
+<button class="btn btn-large" type="button">Large button</button>
+</p>
+<div>
+<% if session[:user_id] %>
+<br />
+<%= link_to 'Posts', products_post %><br />
+<%= link_to 'Users',users_path%><br />
+<br />
+<%= button_to 'Logout', logout_path, :method => :delete %>
+<% end %>
+</div>
 <div class="main-content">
 <%= yield %>
 </div>
 </div>
-
+   
  <div class="footer">
        <div class="footer-container">
        <table><tr>
@@ -75,8 +90,9 @@
            </td>
            <td class="footer-container-centre">
            <a href="http://www.buffercode.in" id="home"><%= image_tag('picload_ui/magical_text.png') %></a>
-            <a href="http://www.buffercode.in" id="home"><img src="picload_ui/gap.png"></a> 
-            <a href="http://www.buffercode.in" id="home"><img src="picload_ui/logo.png"></a>  
+             <a href="http://www.buffercode.in" id="home"><%= image_tag('picload_ui/gap.png') %></a> 
+           <a href="http://www.buffercode.in" id=home"> <%= image_tag('picload_ui/logo_sm.png') %> </a>
+            
            
            </td>
            </tr>

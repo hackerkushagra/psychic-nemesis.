@@ -40,6 +40,11 @@ background-color:#666;}
 	.nav ul li a:hover{ text-decoration: underline;}
 
 .main-content{ min-height: 1120px;}
+ .footer{background-color:#fff}
+	 .footer-container{margin-left:60px;}
+	 .footer-container-centre{position:absolute;
+width:430px; left:50%;
+	 }
 
 .f-footer{
  z-index:1000;position:fixed;bottom:0;width:100%;height:40px; overflow:visible;}

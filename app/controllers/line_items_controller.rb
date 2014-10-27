@@ -18,6 +18,8 @@ class LineItemsController < ApplicationController
   end
 
   # GET /line_items/1/edit
+  skip_before_filter :authorize, :only => :create
+
   def edit
   end
 
