@@ -21,7 +21,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users/new
   def new
-    before_filter :check_session
+   # before_filter :check_session
     @user = User.new
   end
 
@@ -87,10 +87,10 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
       params.require(:user).permit(:username, :password,  :password_confirmation, :hashed_password, :salt)
     end
 
-   protected
-     def checksession
-       unless User.find_by_id(session[:user_id])
-        redirect_to login_url, :notice => "Please log in"
-      end 
-    end
+  # protected
+    # def checksession
+     #  unless User.find_by_id(session[:user_id])
+     #   redirect_to login_url, :notice => "Please log in"
+     # end 
+    #end
 end

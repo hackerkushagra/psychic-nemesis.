@@ -6,7 +6,7 @@
 <table>
     <% @posts.each do |post| %>
       <tr >
-	<td>hello<%= image_tag(post.image_url, :class => 'list_image') %> </td>
+	<td><%= image_tag(post.image_url.url(:thumb).to_s, :class => 'list_image') %> </td>
 	<td >
 	<dl>
 	<dt><%= post.title %></dt>

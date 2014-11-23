@@ -1,6 +1,6 @@
 class AdminController < ApplicationController
   def index
+    @id = current_user.to_i
     #@total_orders = Order.count
-    @name = current_user
   end
 end

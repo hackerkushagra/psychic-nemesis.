@@ -4,7 +4,7 @@
 <h1>Your Pragmatic Catalog</h1>
 <% @posts.each do |post| %>
 <div >
-<%= image_tag(post.image_url) %>
+<%= image_tag(post.image_url.url(:thumb)) %>
 <h3><%= post.title %></h3>
 <%=sanitize post.description %>
 <%= button_to 'Stole', line_items_path(:post_id => post) %>

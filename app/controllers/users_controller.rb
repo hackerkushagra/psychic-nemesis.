@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-skip_before_filter :authorize 
+before_filter :authorize 
 
 before_action :set_user, only: [:show, :edit, :update, :destroy]
   

@@ -1,5 +1,5 @@
 
-<h1>Welcome <%= current_user%></h1>
+<h1>Welcome <%= @id.to_i %> find using helper method in application controller</h1>
 
 It's <%= Time.now %>
 

@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+mount_uploader :image_url, PostImageUploader
   #default_scope :order => 'title'
 	has_many :line_items
 	before_destroy :ensure_not_referenced_by_any_line_item
@@ -19,4 +20,8 @@ validates :image_url, :format => {
     :with    => %r{\.(gif|jpg|png)\z}i,
     :message => 'must be a URL for GIF, JPG or PNG image.'
 }
+
+#def user_params
+ #     params.require(:user).permit(:description, :image_url, :title)
+  #  end
 end
